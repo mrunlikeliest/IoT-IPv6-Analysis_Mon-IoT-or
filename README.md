@@ -58,9 +58,9 @@ Methodology:
 - A huge pcap file is segmented into smaller one
 - Mac address from the list of devices is taken
 - The mac address is passed through the code and output is obtained
-
-Interesting observation from the output:
 <img src="images/op1.PNG" height="200" width="500">
+Interesting observation from the output:
+
 - A mix of IPv4 (0.0.0.0) and IPv6 (::, fe80::, 2001:) addresses is used for source and 
   destination IPs. This indicates a dual-stack network with both IPv4 and IPv6 capabilities. 
   The reason for using dual-stack is to ensure backward compatibility with older IPv4-only 
