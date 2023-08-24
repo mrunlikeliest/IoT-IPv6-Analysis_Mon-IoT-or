@@ -57,8 +57,6 @@ Methodology:
 - Mac address from the list of devices is taken
 - The mac address is passed through the code and output is obtained
 
-(Experiment) Analyzing the traffic from a Mac address
-
 Interesting observation from the output:
 - A mix of IPv4 (0.0.0.0) and IPv6 (::, fe80::, 2001:) addresses is used for source and 
   destination IPs. This indicates a dual-stack network with both IPv4 and IPv6 capabilities. 
