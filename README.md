@@ -20,6 +20,8 @@ Methodology:
 - Test communication between the IPv6 network and the devices 	to ensure that the tunneling and Radvd configurations were working correctly
 - Check connection of different IoT devices on the ipv6 network
 
+<img src="images/op2.PNG" height="200" width="500">
+
 Why these Results:
 - Compatibility assessment: The results help you identify which devices are compatible with   
   IPv6 networks and which are not.
@@ -58,6 +60,7 @@ Methodology:
 - The mac address is passed through the code and output is obtained
 
 Interesting observation from the output:
+<img src="images/op1.PNG" height="200" width="500">
 - A mix of IPv4 (0.0.0.0) and IPv6 (::, fe80::, 2001:) addresses is used for source and 
   destination IPs. This indicates a dual-stack network with both IPv4 and IPv6 capabilities. 
   The reason for using dual-stack is to ensure backward compatibility with older IPv4-only 
