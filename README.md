@@ -20,7 +20,7 @@ Methodology:
 - Test communication between the IPv6 network and the devices 	to ensure that the tunneling and Radvd configurations were working correctly
 - Check connection of different IoT devices on the ipv6 network
 
-<img src="image/op2.PNG" height="200" width="500">
+<img src="image/op2.png" height="200" width="500">
 
 Why these Results:
 - Compatibility assessment: The results help you identify which devices are compatible with   
@@ -58,7 +58,7 @@ Methodology:
 - A huge pcap file is segmented into smaller one
 - Mac address from the list of devices is taken
 - The mac address is passed through the code and output is obtained
-<img src="image/op1.PNG" height="200" width="500">
+<img src="image/op1.png" height="200" width="500">
 Interesting observation from the output:
 
 - A mix of IPv4 (0.0.0.0) and IPv6 (::, fe80::, 2001:) addresses is used for source and 
