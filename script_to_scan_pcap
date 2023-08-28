@@ -1,0 +1,33 @@
+import argparse
+from scapy.all import *
+from tqdm import tqdm
+
+def analyze_pcap(pcap_file, mac_address):
+    packets = rdpcap(pcap_file)
+    results = []
+
+    for packet in tqdm(packets, desc="Scanning"):
+        if packet.haslayer(Ether):
+            source_mac = packet[Ether].src
+            dest_mac = packet[Ether].dst
+
+            if source_mac.lower() == mac_address.lower() or dest_mac.lower() == mac_address.lower():
+                protocol = packet[IP].proto if packet.haslayer(IP) else "Unknown"
+                results.append((source_mac, dest_mac, protocol))
+
+    return results
+
+def print_table(results):
+    print("{:<20} {:<20} {:<15}".format("Source MAC", "Destination MAC", "Protocol"))
+    print("="*55)
+    for result in results:
+        print("{:<20} {:<20} {:<15}".format(result[0], result[1], result[2]))
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Analyze pcap file and filter by MAC address")
+    parser.add_argument("pcap_file", type=str, help="Path to the pcap file")
+    parser.add_argument("mac_address", type=str, help="MAC address to filter")
+    args = parser.parse_args()
+
+    results = analyze_pcap(args.pcap_file, args.mac_address)
+    print_table(results)
